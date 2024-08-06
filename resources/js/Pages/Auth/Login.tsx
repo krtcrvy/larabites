@@ -64,8 +64,17 @@ const Login = ({
                 <InputError message={errors.email} />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="password">Password</Label>
-
+                <div className="flex items-center">
+                  <Label htmlFor="password">Password</Label>
+                  {canResetPassword && (
+                    <Link
+                      href={route("password.request")}
+                      className="ml-auto inline-block text-sm text-primary underline-offset-4 hover:underline"
+                    >
+                      Forgot password?
+                    </Link>
+                  )}
+                </div>
                 <Input
                   id="password"
                   type="password"
@@ -86,15 +95,6 @@ const Login = ({
                   }
                 />
                 <Label htmlFor="remember">Remember me</Label>
-
-                {canResetPassword && (
-                  <Link
-                    href={route("password.request")}
-                    className="ml-auto inline-block text-sm text-primary underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </Link>
-                )}
               </div>
               <Button type="submit" className="w-full" disabled={processing}>
                 Login
