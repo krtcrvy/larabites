@@ -1,6 +1,5 @@
 import "./bootstrap";
 import "../css/app.css";
-
 import { ThemeProvider } from "@/Components/ThemeProvider";
 import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
@@ -20,7 +19,7 @@ createInertiaApp({
     if (import.meta.env.DEV) {
       createRoot(el).render(
         <StrictMode>
-          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <App {...props} />
           </ThemeProvider>
         </StrictMode>,
@@ -28,7 +27,14 @@ createInertiaApp({
       return;
     }
 
-    hydrateRoot(el, <App {...props} />);
+    hydrateRoot(
+      el,
+      <StrictMode>
+        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+          <App {...props} />
+        </ThemeProvider>
+      </StrictMode>,
+    );
   },
   progress: {
     color: "#4B5563",
