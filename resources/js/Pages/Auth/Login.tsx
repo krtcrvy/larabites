@@ -12,6 +12,7 @@ import { Input } from "@/Components/ui/input";
 import { Label } from "@/Components/ui/label";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { Link, useForm } from "@inertiajs/react";
+import type React from "react";
 import type { FormEventHandler } from "react";
 
 const Login = ({
