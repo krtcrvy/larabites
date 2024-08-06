@@ -1,10 +1,17 @@
 import Footer from "@/Components/Footer";
 import Header from "@/Components/Header";
-import type { PropsWithChildren } from "react";
+import { Head } from "@inertiajs/react";
+import type React from "react";
 
-const AuthLayout = ({ children }: PropsWithChildren) => {
+interface AuthLayoutProps {
+  title?: string;
+  children: React.ReactNode;
+}
+
+const AuthLayout = ({ title, children }: AuthLayoutProps) => {
   return (
     <>
+      <Head title={title} />
       <Header />
       <div className="flex flex-col justify-center px-6 h-screen lg:py-0">
         {children}
