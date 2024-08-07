@@ -1,14 +1,12 @@
 import Footer from "@/Components/Footer";
 import Header from "@/Components/Header";
 import { Head } from "@inertiajs/react";
-import type React from "react";
+import type { PropsWithChildren } from "react";
 
-interface AuthLayoutProps {
-  title?: string;
-  children: React.ReactNode;
-}
-
-const AuthLayout = ({ title, children }: AuthLayoutProps) => {
+const AuthLayout = ({
+  title,
+  children,
+}: PropsWithChildren<{ title?: string }>) => {
   return (
     <>
       <Head title={title} />

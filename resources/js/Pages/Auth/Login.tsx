@@ -12,7 +12,6 @@ import { Input } from "@/Components/ui/input";
 import { Label } from "@/Components/ui/label";
 import AuthLayout from "@/Layouts/AuthLayout";
 import { Link, useForm } from "@inertiajs/react";
-import type React from "react";
 import type { FormEventHandler } from "react";
 
 const Login = ({
@@ -34,7 +33,7 @@ const Login = ({
   };
 
   return (
-    <>
+    <AuthLayout title="Login">
       {status && (
         <div className="mb-4 font-medium text-sm text-green-600">{status}</div>
       )}
@@ -111,12 +110,8 @@ const Login = ({
           </CardContent>
         </Card>
       </form>
-    </>
+    </AuthLayout>
   );
 };
-
-Login.layout = (page: React.ReactNode) => (
-  <AuthLayout title="Login" children={page} />
-);
 
 export default Login;

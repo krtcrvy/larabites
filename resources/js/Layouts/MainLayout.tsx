@@ -1,14 +1,12 @@
 import Footer from "@/Components/Footer";
 import Header from "@/Components/Header";
 import { Head } from "@inertiajs/react";
-import type React from "react";
+import type { PropsWithChildren } from "react";
 
-interface MainLayoutProps {
-  title?: string;
-  children: React.ReactNode;
-}
-
-const MainLayout = ({ title, children }: MainLayoutProps) => {
+const MainLayout = ({
+  title,
+  children,
+}: PropsWithChildren<{ title?: string }>) => {
   return (
     <>
       <Head title={title} />

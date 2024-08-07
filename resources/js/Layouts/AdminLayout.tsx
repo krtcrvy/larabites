@@ -34,7 +34,7 @@ import {
   ShoppingCart,
   Users,
 } from "lucide-react";
-import React, { type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
