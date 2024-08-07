@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-stone-50 sm:p-6 dark:bg-stone-800">
+    <footer className="p-4 sm:p-6">
       <div className="mx-auto max-w-screen-xl flex items-center justify-center">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           &copy; {year}{" "}

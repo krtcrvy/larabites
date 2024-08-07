@@ -1,9 +1,18 @@
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import { ModeToggle } from "@/Components/ModeToggle";
 import { Button } from "@/Components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/Components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/Components/ui/sheet";
 import { Link } from "@inertiajs/react";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { Menu } from "lucide-react";
+import React from "react";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -87,6 +96,13 @@ const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="flex flex-col">
+                <SheetHeader>
+                  <VisuallyHidden.Root>
+                    <SheetTitle>Menu</SheetTitle>
+                    <SheetDescription>Main navigation menu</SheetDescription>
+                  </VisuallyHidden.Root>
+                </SheetHeader>
+
                 <nav className="grid gap-6 text-lg font-medium">
                   <Link
                     href="#"
