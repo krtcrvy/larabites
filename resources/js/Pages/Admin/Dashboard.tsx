@@ -1,10 +1,10 @@
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import AdminLayout from "@/Layouts/AdminLayout";
 import type { PageProps } from "@/types";
 import { Head } from "@inertiajs/react";
 
 const Dashboard = ({ auth }: PageProps) => {
   return (
-    <AuthenticatedLayout
+    <AdminLayout
       user={auth.user}
       header={
         <h2 className="font-semibold text-xl text-gray-800 leading-tight">
@@ -21,7 +21,7 @@ const Dashboard = ({ auth }: PageProps) => {
           </div>
         </div>
       </div>
-    </AuthenticatedLayout>
+    </AdminLayout>
   );
 };
 
